@@ -1,0 +1,31 @@
+ #app {
+     width: 600px;
+     margin: 0 auto;
+     padding: 20px;
+ }
+
+ header {
+     margin-top: 50px;
+     text-align: center;
+ }
+
+ table {
+     width: 100%;
+     margin-top: 50px;
+     border-collapse: collapse;
+ }
+
+ table th {
+     background: rgb(59, 57, 57);
+     padding: 15px;
+     color: aliceblue;
+     text-align: left;
+ }
+
+ table td {
+     padding: 15px;
+     text-align: left;
+     background: #eee;
+
+
+ }
