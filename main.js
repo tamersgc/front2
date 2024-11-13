@@ -7,11 +7,11 @@ addButton.onclick = async () => {
     const inputEmail = document.querySelector('#input-email')
 
     const data = {
-        title: inputNome.value,
-        description: inputEmail.value
+        nome: inputNome.value,
+        email: inputEmail.value
     }
 
-    const response = await fetch("http://localhost:3333/projetos/", {
+    const response = await fetch("http://localhost:3333/alunos/", {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-type": "application/json" }
@@ -30,8 +30,8 @@ function updatePage(data) {
     data.forEach(aluno => {
         const linha = createRow()
 
-        linha.querySelector('.aluno-nome p').textContent = aluno.title;
-        linha.querySelector('.aluno-email p').textContent = aluno.description;
+        linha.querySelector('.aluno-nome p').textContent = aluno.nome;
+        linha.querySelector('.aluno-email p').textContent = aluno.email;
 
 
         linha.querySelector('.delete-aluno').onclick = () => {
@@ -45,7 +45,7 @@ function updatePage(data) {
 
 async function deleteAluno(aluno) {
 
-    const newUrl = "http://localhost:3333/projetos/" + aluno.id
+    const newUrl = "http://localhost:3333/alunos/" + aluno.id
 
     const response = await fetch(newUrl, {
         method: "DELETE"
@@ -87,7 +87,7 @@ function cleanPage() {
 
 async function loadPage() {
 
-    const response = await fetch("http://localhost:3333/projetos");
+    const response = await fetch("http://localhost:3333/alunos");
 
     const data = await response.json();
 
